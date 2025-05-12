@@ -1,0 +1,242 @@
+.homepage-body-container {
+    width: 100%;
+    height: 93%;
+    //background-color: wheat;
+
+    display: flex;
+    flex-direction: row;
+}
+
+
+.form-container {
+    width: 40%;
+    height: 100%;
+    z-index: -3;
+    //background-color: whitesmoke;
+    //background-image: url(../../../../public/space.png);
+}
+
+.body-hero-container {
+    // width: 60%;
+    // height: 100%;
+    // background-color: pink;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    display: grid;
+    place-items: center;
+    min-height: 90%;
+    width: 60%;
+    margin: 0;
+    //background-color: #41477e;
+    //background-color: #f1f1f1;
+    overflow: clip;
+    z-index: -2;
+
+    //background-image: url(../../../../public/space.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: repeat;
+
+}
+
+.pokedex, .thebridge, .pokemon2, .pokemon3, .pokemon4, .pokemon5 {
+    grid-area: 1 / 1;
+    padding: 10px;
+    //border: 4px dashed #f4ead5;
+    //border-radius: 50%;
+    //background-color: #215a6d;
+}
+
+.pokedex {
+    width: 323px;
+    height: 600px;
+    //background-color: black;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url(../../../../public/pokedex2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateY(-12px); 
+
+    animation: pop 1s linear 1, 4s float 1.5s linear infinite;
+
+    @keyframes float {
+        from {
+            transform: rotate(0deg) translateY(-12px) rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg) translateY(-12px) rotate(-360deg);
+        }
+    }
+
+    @keyframes pop {
+        0% {
+            opacity: 0;
+            transform: scale(0.25, 0.25) rotate(15deg);
+        }
+        
+        100% {
+            opacity: 1;
+            transform: scale(1, 1);
+        }
+    }
+}
+
+
+@property --angle {
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 0deg;
+}
+
+@property --z {
+  syntax: '<integer>';
+  inherits: true;
+  initial-value: 0;
+}
+
+@keyframes revolve {
+  from {
+    --angle: 0deg;
+    --z: -1;
+  }
+  to {
+    --angle: 360deg;
+    --z: 0;
+  }
+}
+
+// .thebridge, .pokemon2, .pokemon3, .pokemon4, .pokemon5 {
+//     background-color: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+//     backdrop-filter: blur(10px);
+//     -webkit-backdrop-filter: blur(10px);
+//     border: 1px solid rgb(255, 255, 255, 0.18);
+//     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+// }
+
+.thebridge {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 204, 0);
+    border-radius: 50%;
+    background-image: url(../../../../public/ArchaludonTest.png);
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    background-position: center;
+    border: 1px solid black
+}
+
+
+.pokemon2 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(0, 242, 255);
+    border-radius: 50%;
+    background-image: url(../../../../public/pikachu.png);
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    background-position: center;
+    border: 1px solid black;
+}
+
+.pokemon3 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(189, 21, 255);
+    border-radius: 50%;
+    background-image: url(../../../../public/mewtwo.png);
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    background-position: center;
+    border: 1px solid black;
+}
+
+.pokemon4 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(9, 0, 128);
+    border-radius: 50%;
+    background-image: url(../../../../public/lugia.png);
+    background-repeat: no-repeat;
+    background-size: 85px 85px;
+    background-position: center;
+    border: 1px solid black;
+}
+
+.pokemon5 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 157, 247);
+    border-radius: 50%;
+    background-image: url(../../../../public/sceptile.png);
+    background-repeat: no-repeat;
+    background-size: 85px 85px;
+    background-position: center;
+    border: 1px solid black;
+}
+
+.thebridge, .pokemon2, .pokemon3, .pokemon4, .pokemon5 {
+  --x-amplitude: 250px;
+  --y-amplitude: 70px;
+  --x: calc(cos(var(--angle)) * var(--x-amplitude));
+  --y: calc(sin(var(--angle)) * var(--y-amplitude));
+  transform:
+    rotate(var(--rotation))
+    translate(var(--x), var(--y))
+    rotate(calc(var(--rotation) * -1));
+  z-index: calc(var(--z)); /* calc() is for Safari */
+  animation: revolve 8s linear infinite;   
+}
+
+.thebridge {
+    --rotation: 0deg;
+    animation-delay: 0s;
+}
+
+.pokemon2 {
+    --rotation: 60deg;
+    animation-delay: -2s;
+    --x-amplitude: 420px;
+    --y-amplitude: 100px;
+}
+
+.pokemon3 {
+    --rotation: 120deg;
+    animation-delay: -4s;
+    --x-amplitude: 390px;
+    --y-amplitude: 100px;
+}
+
+.pokemon4 {
+    --rotation: 90deg;
+    animation-delay: -6s;
+    --x-amplitude: 350px;
+    --y-amplitude: 100px;
+}
+
+.pokemon5 {
+    --rotation: 180deg;
+    animation-delay: -10s;
+    --x-amplitude: 350px;
+    --y-amplitude: 150px;
+}
+
+
+// .pokedex:hover{
+    
+    
+//     animation: tilt 1s ease-in-out infinite;
+
+
+//     @keyframes tilt {
+//         from {
+//             transform: rotate(0deg) translateY(-6px);
+//         }
+//         to {
+//             transform: rotate(10deg) translateY(-12px);
+//         }
+//     }
+// }
+
+
