@@ -1,6 +1,6 @@
 .homepage-body-container {
     width: 100%;
-    height: 93%;
+    height: 100%;
     //background-color: wheat;
 
     display: flex;
@@ -8,13 +8,13 @@
 }
 
 
-.form-container {
-    width: 40%;
-    height: 100%;
-    z-index: -3;
-    //background-color: whitesmoke;
-    //background-image: url(../../../../public/space.png);
-}
+// .form-container {
+//     width: 40%;
+//     height: 100%;
+//     z-index: -3;
+//     //background-color: whitesmoke;
+//     //background-image: url(../../../../public/space.png);
+// }
 
 .body-hero-container {
     // width: 60%;
@@ -26,8 +26,8 @@
 
     display: grid;
     place-items: center;
-    min-height: 90%;
-    width: 60%;
+    width: 100%;
+    height: 100%;
     margin: 0;
     //background-color: #41477e;
     //background-color: #f1f1f1;
