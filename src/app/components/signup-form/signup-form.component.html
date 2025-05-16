@@ -11,6 +11,10 @@
             <button class="button" (click)="onSubmit()" type="submit">Register</button>
         </div>
         <h4>Return to <a routerLink="/">Login Form!</a></h4>
+
+        @if (errorMessage) {
+            <div class="error-message">{{errorMessage}}</div>
+        }
     </div>
 </div>
 
