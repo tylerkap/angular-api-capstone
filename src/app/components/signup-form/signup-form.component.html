@@ -1,14 +1,14 @@
 <div class="form-container">
-    <div class="form-card">
+    <div [formGroup]="form" (ngSubmit)="onSubmit()" class="form-card">
         <h1>Sign Up</h1>
         <div class="email-input">
-            <input type="text" placeholder="Enter Email" id="emailInput" name="emailInput">
+            <input type="text" placeholder="Enter Email" id="emailInput" formControlName="email">
         </div>
         <div class="password-input">
-            <input type="text" placeholder="Enter Password" id="emailInput" name="emailInput">
+            <input type="text" placeholder="Enter Password" id="passwordInput" formControlName="password">
         </div>
         <div class="login-button">
-            <button class="button">Register</button>
+            <button class="button" (click)="onSubmit()" type="submit">Register</button>
         </div>
         <h4>Return to <a routerLink="/">Login Form!</a></h4>
     </div>
