@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-container {
+    // background-color: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    // backdrop-filter: blur(10px);
+    // -webkit-backdrop-filter: blur(10px);
+    // border: 1px solid rgb(255, 255, 255, 0.18);
+    // box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    //background-image: url(../../../../public/space.png);
+    background-position: bottom;
+
+    //background-color: rgba($color: #ffffff, $alpha: 0.9);
+    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        //background-color: blue;
+        
+        // background-position: center;
+        // background-size: contain;
+        height: 100%;
+        width: 15%;
+        // z-index: 1;
+    }
+
+    .logo {
+        width: 100px;
+        height: 100px;
+        margin-top: 7px;
+        margin-left: 30px;
+        background-image: url(../../../../public/purple-planet.png);
+        background-position: center;
+        background-size: 200px 100px;
+    }
+
+    .title-container {
+        //background-color: pink;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 50%;
+    }
+
+    .title {
+        width: 400px;
+        height: 100%;
+        color: whitesmoke;
+        text-transform: uppercase;
+        font-family: 'Roboto Mono';
+        //background-image: url(../../../../public/title.png);
+        background-position: center;
+        background-size: 400px;
+        background-repeat: no-repeat;
+    }
+
+    .links-container {
+        //background-color: green;
+        width: 25%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 30px;
+        margin-right: 40px;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+
+            li {
+                list-style: none;
+                color: whitesmoke;
+                font-family: 'Roboto Mono';
+                font-size: 18px;
+                cursor: pointer;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+
+            li:hover {
+                color: rgb(117, 14, 252);
+            }
+
+            span {
+                font-family: 'Roboto Mono';
+                font-size: 20px;
+                color: whitesmoke;
+            }
+
+            a {
+                text-decoration: none;
+                color: whitesmoke;
+            }
+
+            a:hover {
+                color: rgb(117, 14, 252); 
+            }
+
+
+            .login-button {
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 150px;
+                height: 100%;
+
+                
+                li {
+                    
+                    width: 140px;
+                    height: 90%;
+                    background-color: whitesmoke;
+                    padding-left: 15px;
+                    color: black;
+                    padding-left: 33px;
+            
+                    
+                }
+
+                li:hover {
+                    color: rgb(117, 14, 252);
+                }
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+
+                a:hover {
+                    color: whitesmoke
+                }
+                    
+            }
+
+            .login-button:hover {
+                animation: float 3s ease-in-out infinite;
+                
+                li {
+                    background-color: rgb(117, 14, 252);
+                    color: white;
+                }
+
+                 @keyframes float {
+                    0% {
+                        transform: rotate(0deg)
+                    }
+                    25% {
+                        transform: rotate(-5deg);
+                    }
+                    50% {
+                        transform: rotate(5deg)
+                    }
+                    75% {
+                        transform: rotate(-5deg);
+                    }
+                    100% {
+                        transform: rotate(0deg);
+                    }
+                }
+
+            }
+        }
+
+    }
+}
