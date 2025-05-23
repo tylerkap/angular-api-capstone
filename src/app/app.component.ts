@@ -9,6 +9,7 @@ import { DashboardApiComponent } from './components/dashboard-api/dashboard-api.
 import { DashboardLoginComponent } from './components/dashboard-login/dashboard-login.component';
 import { DashboardSignupComponent } from './components/dashboard-signup/dashboard-signup.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 import { inject } from '@angular/core';
 import { AuthService } from './auth.service';
 
@@ -24,7 +25,8 @@ import { AuthService } from './auth.service';
     DashboardAboutComponent,
     DashboardApiComponent,
     DashboardLoginComponent,
-    DashboardSignupComponent
+    DashboardSignupComponent,
+    CommonModule
     ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
