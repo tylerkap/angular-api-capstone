@@ -10,6 +10,7 @@ import { DashboardLoginComponent } from './components/dashboard-login/dashboard-
 import { DashboardSignupComponent } from './components/dashboard-signup/dashboard-signup.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination'
 import { inject } from '@angular/core';
 import { AuthService } from './auth.service';
 
@@ -26,7 +27,8 @@ import { AuthService } from './auth.service';
     DashboardApiComponent,
     DashboardLoginComponent,
     DashboardSignupComponent,
-    CommonModule
+    CommonModule,
+    NgxPaginationModule
     ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

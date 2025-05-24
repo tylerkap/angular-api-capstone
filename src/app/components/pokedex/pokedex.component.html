@@ -1,9 +1,10 @@
 <div class="pokedex-container">
     <div class="searchbar-container">
-        <h1>hasldjfa;lsdjfj</h1>
+        <label>Search Pokemon</label>
+        <input type="text" placeholder="Search" name="search">
     </div>
     <div class="pokemon-cards-container">
-        <div class="card" *ngFor="let pokemon of pokemons">
+        <div class="card" *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 8, currentPage: page, totalItems: totalPokemons}">
             <img [src]="pokemon.sprites.front_default" alt="Pokemon">
             <h3>{{ pokemon.name }}</h3>
             <p>
@@ -13,7 +14,7 @@
                 <b>Height:</b> {{ pokemon.height}}
             </p>
             <p>
-                <b>Health:</b> {{ pokemon.stats[0].base_stat}}
+                Health: {{ pokemon.stats[0].base_stat}}
             </p>
             <p>
                 <b>Attach Power:</b> {{ pokemon.stats[1].base_stat}}
@@ -21,6 +22,6 @@
         </div>
     </div>
     <div class="pagination-container">
-        <h1>a;lsdfj;alsdjf</h1>
+        <pagination-controls (pageChange)="page = $event; pokemons = []; getPokemons()"></pagination-controls>
     </div>
 </div>
